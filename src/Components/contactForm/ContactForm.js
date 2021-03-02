@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import style from './ContactForm.module.css';
 
 class ContactForm extends Component {
   state = {
@@ -33,6 +34,7 @@ class ContactForm extends Component {
         <label>
           Name
           <input
+            className={style.inputStyle}
             type="text"
             name="name"
             placeholder="Enter name"
@@ -44,6 +46,7 @@ class ContactForm extends Component {
         <label>
           Number
           <input
+            className={style.inputStyle}
             type="tel"
             name="number"
             placeholder="Enter phone namber"

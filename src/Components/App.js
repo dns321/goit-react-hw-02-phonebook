@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import ContactForm from './contactForm/ContactForm';
 import ContactList from './contactList/ContactList';
 import Filter from './filter/Filter';
+import Section from './section/Section';
 
 class App extends Component {
   state = {
@@ -49,19 +50,21 @@ class App extends Component {
 
     return (
       <>
-        <h1>Phonebook</h1>
-        <ContactForm
-          updateState={this.formUpdateState}
-          checkState={this.checkState}
-        />
+        <Section>
+          <h1>Phonebook</h1>
+          <ContactForm
+            updateState={this.formUpdateState}
+            checkState={this.checkState}
+          />
 
-        <h2>Contacts</h2>
-        <Filter value={filter} onChange={this.changeFilter} />
+          <h2>Contacts</h2>
+          <Filter value={filter} onChange={this.changeFilter} />
 
-        <ContactList
-          contacts={visibleContacts}
-          deleteContact={this.deleteContact}
-        />
+          <ContactList
+            contacts={visibleContacts}
+            deleteContact={this.deleteContact}
+          />
+        </Section>
       </>
     );
   }
